@@ -15,16 +15,16 @@ jobs:
         uses: actions/checkout@v4
       - run: ls -la ${{ github.workspace }}
       - run: csslint ./**/*.css
-    css:
-      runs-on: ubuntu-latest
-      steps:
-        - run: sudo apt update
-        - run: sudo apt install nodejs
-        - run: node -v
-        - run: sudo apt install npm
-        - run: npm -v
-        - run: npm install htmlhint -g
-        - name: Check out repository code
-          uses: actions/checkout@v4
-        - run: ls -la ${{ github.workspace }}
-        - run: htmlhint ./**/*.html
+  css:
+    runs-on: ubuntu-latest
+    steps:
+      - run: sudo apt update
+      - run: sudo apt install nodejs
+      - run: node -v
+      - run: sudo apt install npm
+      - run: npm -v
+      - run: npm install htmlhint -g
+      - name: Check out repository code
+        uses: actions/checkout@v4
+      - run: ls -la ${{ github.workspace }}
+      - run: htmlhint ./**/*.html
