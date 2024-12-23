@@ -1,0 +1,30 @@
+name: Linter
+run-name: ${{ github.actor }} lintering code🚀
+on: [ push ]
+jobs:
+  html:
+    runs-on: ubuntu-latest
+    steps:
+      - run: sudo apt update
+      - run: sudo apt install nodejs
+      - run: node -v
+      - run: sudo apt install npm
+      - run: npm -v
+      - run: npm install -g csslint
+      - name: Check out repository code
+        uses: actions/checkout@v4
+      - run: ls -la ${{ github.workspace }}
+      - run: csslint ./**/*.css
+    css:
+      runs-on: ubuntu-latest
+      steps:
+        - run: sudo apt update
+        - run: sudo apt install nodejs
+        - run: node -v
+        - run: sudo apt install npm
+        - run: npm -v
+        - run: npm install htmlhint -g
+        - name: Check out repository code
+          uses: actions/checkout@v4
+        - run: ls -la ${{ github.workspace }}
+        - run: htmlhint ./**/*.html
