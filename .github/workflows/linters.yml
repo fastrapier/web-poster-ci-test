@@ -8,10 +8,12 @@ jobs:
       - run: sudo apt update
       - run: sudo apt install nodejs
       - run: sudo apt install npm
-      - run: npm install -g csslint
       - name: Check out repository code
         uses: actions/checkout@v4
-      - run: csslint ./**/*.css
+      - run: npm install stylelint-config-standard --save-dev
+      - run: npm init stylelint -y
+      - run: npx stylelint "**/*.css"
+
   html:
     runs-on: ubuntu-latest
     steps:
