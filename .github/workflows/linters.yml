@@ -2,7 +2,7 @@ name: Linter
 run-name: ${{ github.actor }} lintering code🚀
 on: [ push ]
 jobs:
-  html:
+  css:
     runs-on: ubuntu-latest
     steps:
       - run: sudo apt update
@@ -12,7 +12,7 @@ jobs:
       - name: Check out repository code
         uses: actions/checkout@v4
       - run: csslint ./**/*.css
-  css:
+  html:
     runs-on: ubuntu-latest
     steps:
       - run: sudo apt update
