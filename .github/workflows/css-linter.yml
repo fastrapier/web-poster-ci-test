@@ -1,5 +1,5 @@
-name: HTML linter
-run-name: ${{ github.actor }} lintering html code🚀
+name: CSS linter
+run-name: ${{ github.actor }} lintering css code🚀
 on: [ push ]
 jobs:
   lint-cpp:
@@ -10,8 +10,8 @@ jobs:
       - run: node -v
       - run: sudo apt install npm
       - run: npm -v
-      - run: npm install htmlhint -g
+      - run: npm install -g csslint
       - name: Check out repository code
         uses: actions/checkout@v4
       - run: ls -la ${{ github.workspace }}
-      - run: htmlhint ./**/*.html
+      - run: csslint ./**/*.css
